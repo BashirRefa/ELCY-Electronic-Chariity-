@@ -1,0 +1,68 @@
+{
+  "project_info": {
+    "project_number": "653072372722",
+    "project_id": "my-basher",
+    "storage_bucket": "my-basher.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:653072372722:android:20f5367a8255632d14d16b",
+        "android_client_info": {
+          "package_name": "com.bashir.jp_login"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "653072372722-arq5oju5r9tjgdunps8ejc6mi2rhh598.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCVec5_1YVoskSzlIQaTzlo4smI5M06TsY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "653072372722-arq5oju5r9tjgdunps8ejc6mi2rhh598.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:653072372722:android:59b59ebc28bbff8814d16b",
+        "android_client_info": {
+          "package_name": "com.jonuir.first_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "653072372722-arq5oju5r9tjgdunps8ejc6mi2rhh598.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCVec5_1YVoskSzlIQaTzlo4smI5M06TsY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "653072372722-arq5oju5r9tjgdunps8ejc6mi2rhh598.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
