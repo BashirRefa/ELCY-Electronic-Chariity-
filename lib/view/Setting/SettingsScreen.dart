@@ -41,10 +41,10 @@ class SettingsScreen extends StatelessWidget {
               Button(isLoading: false,text: 'Send Problem', function:(){
                 Get.to(CreateProblemScreen());
               }),
-              //SizedBox(height: 20,),
-              // Button(isLoading: false,text: 'Show Post similarity', function:(){
-              //   Get.to(MatchScreen());
-              // }),
+             const SizedBox(height: 20,),
+              Button(isLoading: false,text: 'Show Post similarity', function:(){
+                Get.to(MatchScreen());
+              }),
             ],
           ),
         ],

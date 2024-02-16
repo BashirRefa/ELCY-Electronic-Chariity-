@@ -14,7 +14,7 @@ class CreateProblemController extends GetxController {
   Future<void> createProblem() async {
     try {
       String iduser=CachedHelper.getData(key: 'id');
-      String url='${Applink.problems}/$iduser/65c379c646f6181772e8b5a1';
+      String url='${Applink.problems}/$iduser/65ce73c772fe6d012d71a88a';
       final response = await http.post(
         Uri.parse(url),
         headers: <String, String>{

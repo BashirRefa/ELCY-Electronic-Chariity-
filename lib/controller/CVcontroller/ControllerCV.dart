@@ -1,6 +1,7 @@
 import 'dart:convert';
 
 import 'package:first_app/api/API.dart';
+import 'package:first_app/models/getcvModel/getcvModel.dart';
 import 'package:first_app/widgets/toast.dart';
 import 'package:get/get.dart';
 import 'package:http/http.dart' as http;
@@ -11,10 +12,14 @@ class CVController extends GetxController {
   RxList<String> selectedSkills = <String>[].obs;
   RxString selectedDivision = 'informationEngineering'.obs;
 
+   var cvData = {}.obs;
+  var isLoading = true.obs;
+  var SkillsUser=''.obs;
+
   List<String> getSkillsForDivision(String division) {
     final divisionOptions = {
       'informationEngineering': [
-        'font-end', 'backend', 'flutter', 'nodejs', 'viewjs', 'AI',
+        'front end', 'backend', 'flutter', 'nodejs', 'viewjs', 'AI',
         'laravel', 'asp.net', 'django', 'go', 'rube', 'machine learning',
         'deep learning', 'java', 'c#', 'c', 'c++', 'network', 'neural network',
         'software', 'search engine', 'web design', 'web development', 'UI',
@@ -68,13 +73,32 @@ class CVController extends GetxController {
     if (response.statusCode == 201) {
       print('CV submitted successfully!');
       ShowTost(text: '${response.body}', states: ToastStates.SUCCESS);
-      Map<String, dynamic> responseBody = json.decode(response.body);
-      String Skills=responseBody['Skills'];
-
-      await CachedHelper.putData(key: 'SkillsUser', value: Skills);
     } else {
       print('Error submitting CV: ${response.body}');
       ShowTost(text: '${response.body}', states: ToastStates.ERROR);
     }
   }
+
+  Future<void> fetchCVData() async {
+    try {
+
+      String customerId=CachedHelper.getData(key: 'id');
+      final response = await http.get(Uri.parse('${Applink.getCV_customer}/$customerId'));
+
+      if (response.statusCode == 200) {
+        cvData.value = json.decode(response.body);
+        var responseData = jsonDecode(response.body);
+        SkillsUser(responseData['Skills']);
+        isLoading.value = false;
+      } else {
+        print('Failed to load CV data: ${response.statusCode}');
+        print('Failed to load CV data: ${response.statusCode}');
+        throw Exception('Failed to load CV data');
+      }
+    } catch (error) {
+      print('Error loading CV data: $error');
+      throw Exception('Error loading CV data');
+    }
+  }
+
 }

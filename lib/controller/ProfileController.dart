@@ -3,6 +3,7 @@
 
 import 'dart:convert';
 
+import 'package:first_app/controller/CVcontroller/ControllerCV.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:http/http.dart' as http;
@@ -21,7 +22,7 @@ class ProfileController extends GetxController {
   var address = ''.obs;
   var gender=''.obs;
 
-  var SkillsUser=''.obs;
+
 
   final formSignInKey = GlobalKey<FormState>();
   final firstname2=TextEditingController();
@@ -31,7 +32,7 @@ class ProfileController extends GetxController {
 
 
   String? id = CachedHelper.getData(key: 'id');
-
+  CVController cv=Get.put(CVController());
   Future<void> fetchUserData() async {
     try {
      // print(id);
@@ -50,8 +51,7 @@ class ProfileController extends GetxController {
         phone(responseData['phoneNumber']);
         gender(responseData['gender']);
         address(responseData['address']);
-        String? Skills=await CachedHelper.getData(key: 'SkillsUser');
-        SkillsUser(Skills);
+
       } else {
         throw Exception('Failed to fetch user data');
       }

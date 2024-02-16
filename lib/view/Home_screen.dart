@@ -120,7 +120,7 @@ class _HomeScreenState extends State<HomeScreen> with SingleTickerProviderStateM
                 return GestureDetector(
                   onTap: () async {
 
-                    if(service.sId=='65c65be86755a47eb3861b2c' || service.sId=='65aa9a2a81e84a2f9598bc38'){
+                    if(service.sId=='65ce653972fe6d012d6c8840' || service.sId=='65ce654d72fe6d012d6c8ab2'){
                       return Get.to(() => MedicalCategoryScreen(namecategiry: service.name!, id: service.sId!,),
                         transition: Transition.fade,
                       );

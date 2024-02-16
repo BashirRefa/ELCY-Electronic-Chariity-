@@ -79,7 +79,7 @@ class MedicalCategoryScreen extends StatelessWidget {
                 return GestureDetector(
                   onTap: () async{
                     print(category.id);
-                    if(category.name=='pharmacy' ||category.id=='65a8222a628565a2abc7eb0b') {
+                    if(category.name=='pharmacy' ||category.id=='65ce696372fe6d012d6f8dfe') {
                      return Get.to(() =>
                           PharmacyScreen(
                               namecategiry: category.name!, id: category.id!),

@@ -30,6 +30,8 @@ class Applink{
   static const String getpostCompany='$server/api/getAllPost';
 
   static const String AddCV='$server/api/AddCV';
-
+  static const String getCV_customer='$server/api/getCV_customer';
+  static const String matchPostsToCV='$server/api/matchPostsToCV';
+  static const String getCompany_info='$server/api/getCompany_info';
   static const String problems='$server/api/problems';
 }

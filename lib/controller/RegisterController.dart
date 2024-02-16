@@ -59,6 +59,7 @@ class RegisterController extends GetxController{
       'phoneNumber':registerModel.phoneNumber,
       'password':registerModel.password,
       'email':registerModel.email,
+      'address':registerModel.address,
       'birthday':registerModel.birthday,
     },
     );

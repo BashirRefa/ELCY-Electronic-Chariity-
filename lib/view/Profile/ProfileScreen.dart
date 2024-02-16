@@ -1,3 +1,4 @@
+import 'package:first_app/controller/CVcontroller/ControllerCV.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import '../../widgets/toast.dart';
@@ -15,6 +16,7 @@ class ProfileScreen extends StatelessWidget {
     Color color = const Color(0xff172F45);
 
     ProfileController profileController = Get.put(ProfileController());
+    CVController cvController=Get.put(CVController());
 
     return Scaffold(
       backgroundColor: color,
@@ -38,6 +40,7 @@ class ProfileScreen extends StatelessWidget {
         child: Obx(
               () {
                 profileController.fetchUserData();
+                cvController.fetchCVData();
                 return Column(
                   children: [
                     Padding(
@@ -111,7 +114,7 @@ class ProfileScreen extends StatelessWidget {
                     Padding(
                       padding: const EdgeInsets.all(20),
                       child: defaultFormField(
-                        controller: TextEditingController(text: profileController.SkillsUser.value),
+                        controller: TextEditingController(text: cvController.SkillsUser.value),
                         type: TextInputType.text,
                         label: 'Skills',
                         readOnly: true,
